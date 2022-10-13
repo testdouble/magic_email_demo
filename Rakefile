@@ -4,3 +4,7 @@
 require_relative "config/application"
 
 Rails.application.load_tasks
+
+require "standard/rake"
+
+task default: [:test, "standard:fix"]
