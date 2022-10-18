@@ -1,0 +1,30 @@
+<div class="w-40 mx-auto">
+  <h1 class="text-center text-4xl font-black">Random Numbers</h2>
+  <ul>
+    <% @numbers.sort.reverse.each do |n| %>
+      <% color = if n > 80
+      "text-green-500"
+    elsif n > 60
+      "text-lime-500"
+    elsif n > 40
+      "text-yellow-300"
+    elsif n > 20
+      "text-orange-400"
+    else
+      "text-red-500"
+    end %>
+      <li class="block mt-2 mx-auto text-center text-3xl font-bold <%= color %>"><%= n %></li>
+    <% end %>
+  </ul>
+  <%= form_with path: numbers_path, method: :get do |f| %>
+    <div class="flex justify-between mt-2 mx-auto w-20">
+      <%= f.number_field :count, value: params[:count], class: "w-12" %>
+      <%= f.submit "🎲", name: nil, class: "bg-transparent font-semibold hover:text-white py-1 px-1 border
+        hover:border-transparent rounded cursor-pointer hover:bg-blue-500 text-blue-700 border-blue-500" %>
+    </div>
+  <% end %>
+  <p class="mt-2 text-center text-sm italic">
+    Satisfied with these numbers?
+    <%= link_to "Log out", login_email_path, class: "text-blue-500 hover:text-blue-700", data: { "turbo-method": :delete } %>
+  </p>
+</div>

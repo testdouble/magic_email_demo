@@ -1,0 +1,15 @@
+<% flashes = Array.wrap(flash[category]) %>
+<% if flashes.present? %>
+  <% color_classes = category == :error ? "bg-red-50 border-red-500 text-red-500" : "bg-blue-50 border-blue-500 text-blue-500" %>
+  <div class="w-5/6 p-2 mx-auto mt-1 mb-2 rounded-md <%= color_classes %> font-semibold">
+    <% if flashes.size == 1 %>
+      <%= flashes.first %>
+    <% elsif flashes.size > 1 %>
+      <ul class="list-disc pl-2">
+        <% flashes.each do |flash| %>
+          <li><%= flash %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+<% end %>

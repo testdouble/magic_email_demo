@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-
   <body>
-    <%= yield %>
+    <section class="flashes">
+      <%= render partial: "shared/flash", locals: {category: :notice} %>
+      <%= render partial: "shared/flash", locals: {category: :error} %>
+    </section>
+    <section class="container">
+      <%= yield %>
+    </section>
   </body>
 </html>

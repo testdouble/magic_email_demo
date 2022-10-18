@@ -1,0 +1,23 @@
+<div class="sm:flex items-center justify-center sm:h-screen">
+  <div class="max-w-screen-sm mx-auto sm:p-2 sm:border sm:rounded">
+    <p>
+      If you have a registered account, enter your email address and a login
+      link will be sent to you. If you don't have an account, one will be
+      created for whatever email address you provide.
+    </p>
+    <p class="mt-2">
+      Check your email, click the link, and you're in!
+    </p>
+    <%= form_with url: login_email_path,
+    class: "mt-2" do |f| %>
+      <%= f.hidden_field :redirect_path, value: @redirect_path %>
+      <div class="w-fit mx-auto">
+        <%= f.email_field :email, placeholder: "human@example.com", class: "w-full", size: 30, autocomplete: "off", required: true %>
+      </div>
+      <div class="block mt-2 mx-auto w-fit">
+        <%= f.submit "Send Login Link", class: "bg-transparent font-semibold hover:text-white py-1 px-3 border
+        hover:border-transparent rounded cursor-pointer hover:bg-blue-500 text-blue-700 border-blue-500" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -23,10 +23,12 @@ end
 
 group :development do
   gem "web-console"
+  gem "letter_opener"
 end
 
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "mocktail"
 end
