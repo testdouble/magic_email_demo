@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an example Rails app to help you work through [this blog
+post](https://blog.testdouble.com/posts/2022-10-25-posts/building-passwordless-email-auth-in-rails/).
 
-Things you may want to cover:
+To get up-and-running, have Bundler and Yarn installed:
 
-* Ruby version
+```
+$ ./script/setup
+```
 
-* System dependencies
+Then run the development server
 
-* Configuration
+```
+$ ./script/server
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+And check out the app at [localhost:3000](http://localhost:3000)
